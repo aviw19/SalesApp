@@ -1,28 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
-    <ListView
-        android:id="@+id/lv_items"
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true">
+        android:layout_height="wrap_content"
+        android:textSize="40dp"
+        android:text="View All"
+        android:id="@+id/mt"
+        android:textFontWeight="10"
+        android:fontFamily="sans-serif"
+        android:textColor="@color/White"
+        android:textAlignment="center"
+        android:background="@color/Green"/>
 
-    </ListView>
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/Green"
         android:src="@drawable/ic_arrow_back_black_24dp"
         android:id="@+id/backbutton">
 
     </ImageButton>
+
+    <ListView
+        android:id="@+id/lv_items"
+        android:layout_below="@+id/mt"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </ListView>
+
     <ImageButton
         android:id="@+id/homebutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_home_black_24dp"
         android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true">
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/ic_home_black_24dp">
 
     </ImageButton>
+
+
 
 </RelativeLayout>

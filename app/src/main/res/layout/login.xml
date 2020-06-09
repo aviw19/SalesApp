@@ -7,19 +7,31 @@
     android:layout_centerHorizontal="true"
     >
 
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/bubble_tea" />
+
     <EditText
         android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:fontFamily="sans-serif"
+        android:backgroundTint="@color/Black"
+        android:textSize="20dp"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:inputType="textPersonName"
-        android:hint="EmployeeId" />
+        android:hint="Employee Id" />
 
     <EditText
-
+        android:layout_marginTop="5dp"
         android:id="@+id/password"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
@@ -27,15 +39,35 @@
         android:layout_below="@+id/username"
         android:hint="@string/passwordhint"
         android:ems="10"
+        android:textSize="20dp"
+        android:backgroundTint="@color/Black"
+        android:fontFamily="sans-serif"
         android:inputType="textPassword" />
     <Button
+        android:background="@color/Green"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/password"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:textColor="@color/White"
+        android:fontFamily="sans-serif"
         android:id="@+id/login"
+        android:textSize="20dp"
         android:text="Login">
 
     </Button>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Powered by Intery Tech"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/White"
+       android:fontFamily="sans-serif"/>
 </RelativeLayout>

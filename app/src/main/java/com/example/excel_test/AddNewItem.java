@@ -15,6 +15,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -62,6 +63,8 @@ public class AddNewItem extends AppCompatActivity implements SearchView.OnQueryT
     EditText editTextRemark;
     Spinner brokerspinner;
     Button addItemButton;
+    ImageButton homeButton;
+    ImageButton backButton;
     ArrayList<String> brokers = new ArrayList<>();
     ProgressDialog loading;
      String Broker;
@@ -89,6 +92,22 @@ public class AddNewItem extends AppCompatActivity implements SearchView.OnQueryT
         editTextBilty= findViewById(R.id.biltyet);
         editTextRemark = findViewById(R.id.remarket);
         addItemButton = findViewById(R.id.additembutton);
+        homeButton=findViewById(R.id.homebutton);
+        backButton=findViewById(R.id.backbutton);
+        homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(AddNewItem.this,Options.class);
+                startActivity(intent);
+            }
+        });
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(AddNewItem.this,showSheet1.class);
+                startActivity(intent);
+            }
+        });
         loading =  ProgressDialog.show(this,"Loading","please wait",false,true);
         getItems();
         brokerspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
