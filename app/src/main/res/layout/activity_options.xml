@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_height="match_parent" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:orientation="vertical">
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:orientation="horizontal"
+    android:padding="20dp"
+    android:layout_gravity="center_horizontal"
+    android:layout_height="wrap_content">
+
+
+            <Button android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:id="@+id/viewsheet1inside"
+
+                android:text="VIEW ">
+
+            </Button>
+            <Button android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/addrow"
+                android:text=" ADD ROW " />
+            <Button android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:id="@+id/viewsheet1"
+                android:text="Sheet1">
+
+            </Button>
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:padding="20dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content">
+
+
+        <Button android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:id="@+id/viewsold"
+
+            android:text="SOLD ">
+
+        </Button>
+        <Button android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/viewunsold"
+            android:text="UNSOLD" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:padding="15dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/viewsheet2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text=" View Sheet2  "/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:padding="15dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content">
+
+            <Button android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/newbroker"
+                android:text=" ADD NEW BROKER " />
+            <Button android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/brokersheet"
+                android:text=" BROKER SHEET " />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:padding="15dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content">
+        <Button android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/newemployee"
+            android:text=" ADD NEW EMPLOYEE " />
+        <Button android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/employeesheet"
+            android:text=" EMPLOYEE SHEET " />
+
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_width="wrap_content"
+            android:text="Logout"
+            android:id="@+id/logout"
+            android:layout_height="wrap_content">
+
+        </Button>
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_arrow_back_black_24dp"
+        android:id="@+id/backbutton">
+
+    </ImageButton>
+    <ImageButton
+        android:id="@+id/homebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_home_black_24dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"/>
+
+
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingTop="20dp"
+    android:text="@string/lotno"
+    android:layout_centerHorizontal="true"
+    android:id="@+id/lotnodtv" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:paddingLeft="5dp"
+        android:text=": ###"
+        android:layout_toRightOf="@id/lotnodtv"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/lotnodtvdata" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:layout_below="@id/lotnodtv"
+        android:text="@string/date"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/datedtv" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:paddingLeft="5dp"
+        android:layout_below="@id/lotnodtv"
+        android:text=" : ###"
+        android:layout_toRightOf="@id/datedtv"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/datedtvdata" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:layout_below="@id/datedtv"
+        android:text="@string/Grade"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/gradedtv" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:paddingLeft="5dp"
+        android:layout_below="@id/datedtv"
+        android:text=" : ###"
+        android:layout_toRightOf="@id/gradedtv"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/gradedtvdata" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:layout_below="@id/gradedtv"
+        android:text="@string/Net"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/netdtv" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:paddingLeft="5dp"
+        android:layout_below="@id/gradedtv"
+        android:text=" : ###"
+        android:layout_toRightOf="@id/netdtv"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/netdtvdata" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:layout_below="@id/netdtv"
+        android:text="@string/pkg"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/pkgdtv" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:paddingLeft="5dp"
+        android:layout_below="@id/netdtv"
+        android:text=" : ###"
+        android:layout_toRightOf="@id/pkgdtv"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/pkgdtvdata" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:layout_below="@id/pkgdtv"
+        android:text="@string/total"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/totaldtv" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:paddingLeft="5dp"
+        android:layout_below="@id/pkgdtv"
+        android:text=" : ###"
+        android:layout_toRightOf="@id/totaldtv"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/totaldtvdata" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:layout_below="@id/totaldtv"
+        android:text="@string/sold"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/solddtv" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:paddingLeft="5dp"
+        android:layout_below="@id/totaldtv"
+        android:text=" : ###"
+        android:layout_toRightOf="@id/solddtv"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/solddtvdata" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:layout_below="@id/solddtv"
+        android:text="@string/mark"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/markdtv" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:paddingLeft="5dp"
+        android:layout_below="@id/solddtv"
+        android:text=" : ###"
+        android:layout_toRightOf="@id/markdtv"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/markdtvdata" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:layout_below="@id/markdtv"
+        android:text="@string/rate"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/ratedtv" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:paddingLeft="5dp"
+        android:layout_below="@id/markdtv"
+        android:text=" : ###"
+        android:layout_toRightOf="@id/ratedtv"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/ratedtvdata" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:layout_below="@id/ratedtv"
+        android:text="@string/CD"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/cddtv" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:paddingLeft="5dp"
+        android:layout_below="@id/ratedtv"
+        android:text=" : ###"
+        android:layout_toRightOf="@id/cddtv"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/cddtvdata" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:layout_below="@id/cddtv"
+        android:text="@string/broker"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/brokerdtv" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:paddingLeft="5dp"
+        android:layout_below="@id/cddtv"
+        android:text=" : ###"
+        android:layout_toRightOf="@id/brokerdtv"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/brokerdtvdata" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:layout_below="@id/brokerdtv"
+        android:text="@string/partyname"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/partynamedtv" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:paddingLeft="5dp"
+        android:layout_below="@id/brokerdtv"
+        android:text=" : ###"
+        android:layout_toRightOf="@id/partynamedtv"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/partynamedtvdata" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:layout_below="@id/partynamedtv"
+        android:text="@string/city"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/citydtv" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:paddingLeft="5dp"
+        android:layout_below="@id/partynamedtv"
+        android:text=" : ###"
+        android:layout_toRightOf="@id/citydtv"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/citydtvdata" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:layout_below="@id/citydtv"
+        android:text="@string/transport"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/transportdtv" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:paddingLeft="5dp"
+        android:layout_below="@id/citydtv"
+        android:text=" : ###"
+        android:layout_toRightOf="@id/transportdtv"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/transportdtvdata" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:layout_below="@id/transportdtv"
+        android:text="@string/dio"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/diodtv" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:paddingLeft="5dp"
+        android:layout_below="@id/transportdtv"
+        android:text=" : ###"
+        android:layout_toRightOf="@id/diodtv"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/diodtvdata" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:layout_below="@id/diodtv"
+        android:text="@string/exinvoice"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/exinvoicedtv" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:paddingLeft="5dp"
+        android:layout_below="@id/diodtv"
+        android:text=" : ###"
+        android:layout_toRightOf="@id/exinvoicedtv"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/exinvoicedtvdata" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:layout_below="@id/exinvoicedtv"
+        android:text="@string/dispatch"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/dispatchdtv" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:paddingLeft="5dp"
+        android:layout_below="@id/exinvoicedtv"
+        android:text=" : ###"
+        android:layout_toRightOf="@id/dispatchdtv"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/dispatchdtvdata" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:layout_below="@id/dispatchdtv"
+        android:text="@string/bilty"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/biltydtv" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:paddingLeft="5dp"
+        android:layout_below="@id/dispatchdtv"
+        android:text=" : ###"
+        android:layout_toRightOf="@id/biltydtv"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/biltydtvdata" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:layout_below="@id/biltydtv"
+        android:text="@string/REMARK"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/remarkdtv" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:paddingLeft="5dp"
+        android:layout_below="@id/biltydtv"
+        android:text=" : ###"
+        android:layout_toRightOf="@id/remarkdtv"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/remarkdtvdata" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:layout_below="@id/remarkdtv"
+        android:text="UPDATE"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/updatebutton" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:paddingLeft="5dp"
+        android:layout_below="@id/remarkdtv"
+        android:text="Delete"
+        android:layout_toRightOf="@id/updatebutton"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/deletebutton" />
+
+</RelativeLayout>
+</ScrollView>

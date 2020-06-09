@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Sales</string>
+    <string name="passwordhint">Password</string>
+    <string name="date">DATE : </string>
+    <string name="lotno">LOTNO : </string>
+    <string name="Grade">GRADE : </string>
+    <string name="Net">NET : </string>
+    <string name="pkg">PKG : </string>
+    <string name="total">Total : </string>
+    <string name="mark">Mark : </string>
+    <string name="sold">SOLD : </string>
+    <string name="rate">RATE : </string>
+    <string name="CD">CD% : </string>
+    <string name="broker">BROKER : </string>
+    <string name="partyname">PARTY NAME : </string>
+    <string name="city">CITY : </string>
+    <string name="transport">TRANSPORT : </string>
+    <string name="dio">DIO : </string>
+    <string name="exinvoice">EX INVOICE : </string>
+    <string name="dispatch">DISPATCH : </string>
+    <string name="bilty">BILTY : </string>
+    <string name="REMARK">REMARK : </string>
+
+</resources>

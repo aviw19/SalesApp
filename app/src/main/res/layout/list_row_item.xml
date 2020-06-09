@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LotNo :"
+        android:paddingLeft="40dp"
+        android:paddingTop="20dp"
+        android:id="@+id/lotnotv"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="##"
+        android:paddingTop="20dp"
+        android:paddingLeft="5dp"
+        android:layout_toRightOf="@id/lotnotv"
+        android:id="@+id/lotnotvdata"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mark :"
+        android:paddingLeft="40dp"
+        android:paddingTop="15dp"
+        android:layout_below="@id/lotnotv"
+        android:id="@+id/marktv"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sample"
+        android:paddingTop="15dp"
+        android:paddingLeft="5dp"
+        android:layout_below="@id/lotnotvdata"
+        android:layout_toRightOf="@id/marktv"
+        android:id="@+id/marktvdata"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Broker :"
+        android:paddingLeft="40dp"
+        android:paddingTop="15dp"
+        android:layout_below="@id/marktv"
+        android:id="@+id/brokertv"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sample"
+        android:paddingTop="15dp"
+        android:paddingLeft="5dp"
+        android:layout_below="@id/marktvdata"
+        android:layout_toRightOf="@id/brokertv"
+        android:id="@+id/brokertvdata"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" # # #"
+        android:paddingTop="20dp"
+        android:paddingRight="40dp"
+
+        android:layout_alignParentRight="true"
+        android:id="@+id/ratetvdata"/>
+
+    <TextView
+        android:id="@+id/ratetv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/ratetvdata"
+        android:paddingTop="20dp"
+        android:text="Rate : " />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" # # #"
+        android:paddingTop="15dp"
+        android:paddingRight="40dp"
+        android:layout_below="@id/ratetvdata"
+
+        android:layout_alignParentRight="true"
+        android:id="@+id/datetvdata"/>
+
+    <TextView
+        android:id="@+id/datetv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/datetvdata"
+        android:layout_below="@id/ratetv"
+        android:paddingTop="15dp"
+        android:text="Date : " />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sold"
+        android:paddingTop="15dp"
+        android:paddingRight="40dp"
+        android:layout_below="@id/datetvdata"
+
+        android:layout_alignParentRight="true"
+        android:id="@+id/statustvdata"/>
+
+    <TextView
+        android:id="@+id/statustv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/statustvdata"
+        android:layout_below="@id/datetv"
+        android:paddingTop="15dp"
+        android:text="Status : " />
+
+
+
+</RelativeLayout>

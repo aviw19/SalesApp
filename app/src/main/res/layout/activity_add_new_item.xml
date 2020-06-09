@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:id="@+id/addItem"
+    android:layout_gravity="center_vertical">
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_arrow_back_black_24dp"
+        android:id="@+id/backbutton">
+
+    </ImageButton>
+    <ImageButton
+        android:id="@+id/homebuttion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_home_black_24dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true">
+
+    </ImageButton>
+
+
+    <EditText
+        android:id="@+id/dateet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:paddingTop="200dp"
+        android:layout_centerHorizontal="true"
+        android:inputType="textPersonName"
+        android:hint="Date" />
+
+    <EditText
+
+        android:id="@+id/lotnoet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/dateet"
+        android:hint="@string/lotno"
+        android:ems="10"/>
+    <EditText
+
+        android:id="@+id/gradeet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/lotnoet"
+        android:hint="@string/Grade"
+        android:ems="10"/>
+    <EditText
+
+        android:id="@+id/netet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/gradeet"
+        android:hint="@string/Net"
+        android:ems="10"/>
+    <EditText
+
+        android:id="@+id/pkget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/netet"
+        android:hint="@string/pkg"
+        android:ems="10"/>
+    <EditText
+
+        android:id="@+id/totalet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/pkget"
+        android:hint="@string/total"
+        android:ems="10"/>
+    <EditText
+
+        android:id="@+id/market"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/totalet"
+        android:hint="@string/mark"
+        android:ems="10"/>
+    <EditText
+
+        android:id="@+id/soldet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/market"
+        android:hint="@string/sold"
+        android:ems="10"/>
+    <EditText
+
+        android:id="@+id/rateet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/soldet"
+        android:hint="@string/rate"
+        android:ems="10"/>
+    <EditText
+
+        android:id="@+id/cdet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/rateet"
+        android:hint="@string/CD"
+        android:ems="10"/>
+
+    <Spinner
+        android:id="@+id/brokeret"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cdet"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        />
+    <EditText
+
+        android:id="@+id/partyet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/brokeret"
+        android:hint="@string/partyname"
+        android:ems="10"/>
+    <EditText
+
+        android:id="@+id/cityet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/partyet"
+        android:hint="@string/city"
+        android:ems="10"/>
+    <EditText
+
+        android:id="@+id/transportet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/cityet"
+        android:hint="@string/transport"
+        android:ems="10"/>
+    <EditText
+
+        android:id="@+id/dioet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/transportet"
+        android:hint="@string/dio"
+        android:ems="10"/>
+    <EditText
+
+        android:id="@+id/exinvoiceet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/dioet"
+        android:hint="@string/exinvoice"
+        android:ems="10"/>
+    <EditText
+
+        android:id="@+id/dispatchet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/exinvoiceet"
+        android:hint="@string/dispatch"
+        android:ems="10"/>
+    <EditText
+
+        android:id="@+id/biltyet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/dispatchet"
+        android:hint="@string/bilty"
+        android:ems="10"/>
+        <EditText
+
+            android:id="@+id/remarket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/biltyet"
+            android:hint="@string/REMARK"
+            android:ems="10"/>
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/additembutton"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/remarket"
+            android:text="Add Item"> </Button>
+
+
+
+
+
+</RelativeLayout>
+</ScrollView>
