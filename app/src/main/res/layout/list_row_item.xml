@@ -6,6 +6,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="LotNo :"
+        android:textColor="@color/Black"
+        android:fontFamily="sans-serif"
         android:paddingLeft="40dp"
         android:paddingTop="20dp"
         android:id="@+id/lotnotv"/>
@@ -13,6 +15,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="##"
+        android:textColor="@color/Black"
+        android:fontFamily="sans-serif"
         android:paddingTop="20dp"
         android:paddingLeft="5dp"
         android:layout_toRightOf="@id/lotnotv"
@@ -21,6 +25,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Mark :"
+        android:textColor="@color/Black"
+        android:fontFamily="sans-serif"
         android:paddingLeft="40dp"
         android:paddingTop="15dp"
         android:layout_below="@id/lotnotv"
@@ -30,6 +36,8 @@
         android:layout_height="wrap_content"
         android:text="Sample"
         android:paddingTop="15dp"
+        android:textColor="@color/Black"
+        android:fontFamily="sans-serif"
         android:paddingLeft="5dp"
         android:layout_below="@id/lotnotvdata"
         android:layout_toRightOf="@id/marktv"
@@ -39,6 +47,8 @@
         android:layout_height="wrap_content"
         android:text="Broker :"
         android:paddingLeft="40dp"
+        android:textColor="@color/Black"
+        android:fontFamily="sans-serif"
         android:paddingTop="15dp"
         android:layout_below="@id/marktv"
         android:id="@+id/brokertv"/>
@@ -48,6 +58,8 @@
         android:text="Sample"
         android:paddingTop="15dp"
         android:paddingLeft="5dp"
+        android:textColor="@color/Black"
+        android:fontFamily="sans-serif"
         android:layout_below="@id/marktvdata"
         android:layout_toRightOf="@id/brokertv"
         android:id="@+id/brokertvdata"/>
@@ -57,6 +69,8 @@
         android:text=" # # #"
         android:paddingTop="20dp"
         android:paddingRight="40dp"
+        android:textColor="@color/Black"
+        android:fontFamily="sans-serif"
 
         android:layout_alignParentRight="true"
         android:id="@+id/ratetvdata"/>
@@ -67,6 +81,8 @@
         android:layout_height="wrap_content"
         android:layout_toLeftOf="@id/ratetvdata"
         android:paddingTop="20dp"
+        android:textColor="@color/Black"
+        android:fontFamily="sans-serif"
         android:text="Rate : " />
     <TextView
         android:layout_width="wrap_content"
@@ -74,6 +90,8 @@
         android:text=" # # #"
         android:paddingTop="15dp"
         android:paddingRight="40dp"
+        android:textColor="@color/Black"
+        android:fontFamily="sans-serif"
         android:layout_below="@id/ratetvdata"
 
         android:layout_alignParentRight="true"
@@ -85,6 +103,8 @@
         android:layout_height="wrap_content"
         android:layout_toLeftOf="@id/datetvdata"
         android:layout_below="@id/ratetv"
+        android:textColor="@color/Black"
+        android:fontFamily="sans-serif"
         android:paddingTop="15dp"
         android:text="Date : " />
 
@@ -94,6 +114,8 @@
         android:text="Sold"
         android:paddingTop="15dp"
         android:paddingRight="40dp"
+        android:textColor="@color/Black"
+        android:fontFamily="sans-serif"
         android:layout_below="@id/datetvdata"
 
         android:layout_alignParentRight="true"
@@ -105,6 +127,8 @@
         android:layout_height="wrap_content"
         android:layout_toLeftOf="@id/statustvdata"
         android:layout_below="@id/datetv"
+        android:textColor="@color/Black"
+        android:fontFamily="sans-serif"
         android:paddingTop="15dp"
         android:text="Status : " />
 

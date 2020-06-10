@@ -38,9 +38,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class AddNewItem extends AppCompatActivity implements SearchView.OnQueryTextListener {
-    private SearchView searchView;
-    private MenuItem searchMenuItem;
+public class AddNewItem extends AppCompatActivity {
+
 
     EditText editTextDate;
     EditText editTextLotno;
@@ -94,6 +93,13 @@ public class AddNewItem extends AppCompatActivity implements SearchView.OnQueryT
         addItemButton = findViewById(R.id.additembutton);
         homeButton=findViewById(R.id.homebutton);
         backButton=findViewById(R.id.backbutton);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(AddNewItem.this,Options.class);
+                startActivity(intent);
+            }
+        });
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -101,13 +107,7 @@ public class AddNewItem extends AppCompatActivity implements SearchView.OnQueryT
                 startActivity(intent);
             }
         });
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent= new Intent(AddNewItem.this,showSheet1.class);
-                startActivity(intent);
-            }
-        });
+
         loading =  ProgressDialog.show(this,"Loading","please wait",false,true);
         getItems();
         brokerspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -276,32 +276,5 @@ public class AddNewItem extends AppCompatActivity implements SearchView.OnQueryT
         loading.dismiss();
 
     }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.search, menu);
 
-        SearchManager searchManager = (SearchManager)
-                getSystemService(Context.SEARCH_SERVICE);
-        searchMenuItem = menu.findItem(R.id.search);
-        searchView = (SearchView) searchMenuItem.getActionView();
-
-        searchView.setSearchableInfo(searchManager.
-                getSearchableInfo(getComponentName()));
-        searchView.setSubmitButtonEnabled(true);
-        searchView.setOnQueryTextListener(this);
-
-        return true;
-    }
-
-
-    @Override
-    public boolean onQueryTextSubmit(String query) {
-        return false;
-    }
-
-    @Override
-    public boolean onQueryTextChange(String newText) {
-        return false;
-    }
 }

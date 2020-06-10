@@ -7,5 +7,7 @@
     <color name="Red">#FF0000</color>
     <color name="White">#FFF</color>
     <color name="Black">#000000</color>
+    <color name="LightGreen">#008000</color>
+    <color name="DarkGreen">#006400</color>
 
 </resources>

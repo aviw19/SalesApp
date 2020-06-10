@@ -52,10 +52,11 @@
             android:id="@+id/viewsheet1"
             android:layout_width="0dp"
             android:fontFamily="sans-serif"
+            android:textColor="@color/White"
+            android:background="@color/colorAccent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-
-
+            android:layout_marginRight="10dp"
             android:text="Dasparta Tea">
 
         </Button>
@@ -64,6 +65,8 @@
             android:id="@+id/viewsheet2"
             android:layout_width="0dp"
             android:fontFamily="sans-serif"
+            android:textColor="@color/White"
+            android:background="@color/colorAccent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
 
@@ -102,6 +105,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/viewsheet1inside"
                 android:fontFamily="sans-serif"
+                android:textColor="@color/White"
+                android:background="@color/colorAccent"
                 android:text="View All">
 
             </Button>
@@ -109,11 +114,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/viewsold"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/White"
+            android:background="@color/LightGreen"
             android:fontFamily="sans-serif"
             android:text="SOLD "/>
         <Button android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/viewunsold"
+            android:background="@color/Red"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/White"
             android:fontFamily="sans-serif"
             android:text="UNSOLD" />
 </LinearLayout>
@@ -133,8 +144,10 @@
         android:layout_marginTop="15dp"
         android:fontFamily="sans-serif"
         android:layout_marginRight="20dp"
+        android:textColor="@color/White"
+        android:background="@color/colorAccent"
         android:layout_marginLeft="20dp"
-        android:text=" ADD ROW " />
+        android:text=" + ADD ROW " />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -165,14 +178,19 @@
 
             <Button android:layout_width="0dp"
                 android:layout_weight="1"
+                android:background="@color/colorAccent"
+                android:textColor="@color/White"
                 android:fontFamily="sans-serif"
+                android:layout_marginRight="10dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/newbroker"
-                android:text=" ADD NEW BROKER " />
+                android:text=" + ADD NEW BROKER " />
             <Button
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:fontFamily="sans-serif"
+                android:background="@color/colorAccent"
+                android:textColor="@color/White"
                 android:layout_height="wrap_content"
                 android:id="@+id/brokersheet"
                 android:text=" BROKER SHEET " />
@@ -188,12 +206,17 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:fontFamily="sans-serif"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@color/White"
+            android:layout_marginRight="10dp"
             android:layout_height="wrap_content"
             android:id="@+id/newemployee"
-            android:text=" ADD NEW EMPLOYEE " />
+            android:text=" + ADD NEW EMPLOYEE " />
         <Button
             android:layout_width="0dp"
             android:layout_weight="1"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@color/White"
             android:fontFamily="sans-serif"
             android:layout_height="wrap_content"
             android:id="@+id/employeesheet"
@@ -209,6 +232,8 @@
             android:layout_width="wrap_content"
             android:fontFamily="sans-serif"
             android:text="Logout"
+            android:background="@color/LightGreen"
+            android:textColor="@color/White"
             android:id="@+id/logout"
             android:layout_height="wrap_content">
         </Button>

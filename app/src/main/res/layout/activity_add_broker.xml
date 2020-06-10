@@ -3,22 +3,30 @@
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:id="@+id/addItem"
     android:layout_gravity="center_vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="40dp"
+        android:text="Add Broker"
+
+        android:textFontWeight="10"
+        android:fontFamily="sans-serif"
+        android:textColor="@color/White"
+        android:textAlignment="center"
+        android:background="@color/Green"/>
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/Green"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+
         android:src="@drawable/ic_arrow_back_black_24dp"
         android:id="@+id/backbutton">
 
     </ImageButton>
-    <ImageButton
-        android:id="@+id/homebutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_home_black_24dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true">
 
-    </ImageButton>
 
 
     <EditText
@@ -26,7 +34,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:paddingTop="200dp"
+        android:layout_marginTop="300dp"
+        android:textSize="20dp"
+        android:fontFamily="sans-serif"
         android:layout_centerHorizontal="true"
         android:inputType="textPersonName"
         android:hint="Broker Name" />
@@ -39,6 +49,9 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/brokernameet"
         android:hint="Broker Contact Number"
+        android:fontFamily="sans-serif"
+        android:textSize="20dp"
+        android:layout_centerVertical="true"
         android:inputType="number"
         android:ems="10"/>
 
@@ -47,7 +60,34 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/brokercontactnoet"
         android:layout_centerHorizontal="true"
+        android:fontFamily="sans-serif"
+        android:textColor="@color/White"
+        android:ems="10"
+        android:layout_centerVertical="true"
+        android:background="@color/colorAccent"
+        android:textSize="20dp"
         android:id="@+id/addbroker"
         android:text="Add Broker" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="40dp"
+        android:layout_alignParentBottom="true"
+
+        android:textFontWeight="10"
+        android:fontFamily="sans-serif"
+        android:textColor="@color/White"
+        android:textAlignment="center"
+        android:background="@color/Green"/>
+    <ImageButton
+        android:id="@+id/homebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/Green"
+        android:src="@drawable/ic_home_black_24dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true">
+
+    </ImageButton>
 
 </RelativeLayout>

@@ -9,9 +9,12 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.android.volley.DefaultRetryPolicy;
@@ -23,6 +26,11 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -38,8 +46,11 @@ public class UpdateItem extends AppCompatActivity {
     Button updatewithchanges;
     Button updatebutton;
     ImageButton homeButton;
+    String Broker;
     ImageButton backButton;
     ProgressDialog loading;
+    ArrayList<String> brokers = new ArrayList<>();
+    Spinner brokerspinner;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,7 +78,7 @@ public class UpdateItem extends AppCompatActivity {
         EditTextDate=findViewById(R.id.datedtvdata);
         EditTextcity=findViewById(R.id.citydtvdata);
         EditTextbilty=findViewById(R.id.biltydtvdata);
-        EditTextbroker=findViewById(R.id.brokerdtvdata);
+
         EditTextlotno=findViewById(R.id.lotnodtvdata);
         EditTextcd=findViewById(R.id.cddtvdata);
         EditTextmark=findViewById(R.id.markdtvdata);
@@ -98,7 +109,7 @@ public class UpdateItem extends AppCompatActivity {
         EditTextdispatch.setText(dispatch);
         EditTextdio.setText(dio);
         EditTexttransport.setText(transport);
-        EditTextbroker.setText(broker);
+       // EditTextbroker.setText(broker);
         EditTextexinvoice.setText(exinvoice);
         EditTextlotno.setText(lotno);
         EditTextcd.setText(cd);
@@ -107,6 +118,27 @@ public class UpdateItem extends AppCompatActivity {
         updatewithchanges=findViewById(R.id.updatewithchangesbutton);
         homeButton=findViewById(R.id.homebutton);
         backButton=findViewById(R.id.backbutton);
+        brokerspinner =findViewById(R.id.brokerdtvdata);
+
+        getAllBrokers();
+        brokerspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if(position==0)
+                    Broker="";
+                else
+                    Broker= (String) parent.getItemAtPosition(position);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+
+
+
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -138,8 +170,71 @@ public class UpdateItem extends AppCompatActivity {
         });
     }
 
+    private void getAllBrokers() {
+        loading=ProgressDialog.show(this,"Please wait","Please wait");
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, "https://script.google.com/macros/s/AKfycbxYFxNKZ54PSIMwTbS1Jv01_TEYLx-RKyXolz4tCnLqzIhIS28t/exec?action=getBrokernames",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        parseItems(response);
+                    }
+                },
+
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                }
+        );
+
+        int socketTimeOut = 50000;
+        RetryPolicy policy = new DefaultRetryPolicy(socketTimeOut, 0, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT);
+
+        stringRequest.setRetryPolicy(policy);
+
+        RequestQueue queue = Volley.newRequestQueue(this);
+        queue.add(stringRequest);
+
+    }
+
+
+    private void parseItems(String jsonResposnce) {
+        loading.dismiss();
+
+        ArrayList<HashMap<String, String>> list = new ArrayList<>();
+        brokers.add(broker);
+
+        try {
+            JSONObject jobj = new JSONObject(jsonResposnce);
+            JSONArray jarray = jobj.getJSONArray("items");
+
+
+            for (int i = 0; i < jarray.length(); i++) {
+
+                JSONObject jo = jarray.getJSONObject(i);
+
+                String brokername = jo.getString("brokername");
+
+                brokers.add(brokername);
+
+
+
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } ArrayAdapter<String> adapter =
+                new ArrayAdapter<String>(getApplicationContext(),  android.R.layout.simple_spinner_dropdown_item, brokers);
+        adapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item);
+
+        brokerspinner.setAdapter(adapter);
+
+      //  loading.dismiss();
+
+    }
+
     private void getBroker() {
-        final String brokerget = EditTextbroker.getText().toString().trim();
+        final String brokerget = Broker;
         StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://script.google.com/macros/s/AKfycbxYFxNKZ54PSIMwTbS1Jv01_TEYLx-RKyXolz4tCnLqzIhIS28t/exec",
                 new Response.Listener<String>() {
                     @Override
@@ -211,7 +306,7 @@ public class UpdateItem extends AppCompatActivity {
         final String Sold = EditTextsold.getText().toString().trim();
         final String Rate = EditTextrate.getText().toString().trim();
         final String CD = EditTextcd.getText().toString().trim();
-        final String Broker = EditTextbroker.getText().toString().trim();
+        //final String Broker = EditTextbroker.getText().toString().trim();
         final String PartyName = EditTextpartyname.getText().toString().trim();
         final String City = EditTextcity.getText().toString().trim();
         final String Transport = EditTexttransport.getText().toString().trim();
@@ -278,4 +373,4 @@ public class UpdateItem extends AppCompatActivity {
         queue.add(stringRequest);
     }
 
-    }
+}

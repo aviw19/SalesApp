@@ -3,18 +3,28 @@ package com.example.excel_test;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageButton;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,6 +44,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class showSheet1 extends AppCompatActivity implements AdapterView.OnItemClickListener {
@@ -41,7 +52,9 @@ public class showSheet1 extends AppCompatActivity implements AdapterView.OnItemC
     ListAdapter adapter;
     ProgressDialog loading;
     ImageButton homeButton;
+    SimpleAdapter simpleAdapter;
     ImageButton backButton;
+    EditText inputSearch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +63,7 @@ public class showSheet1 extends AppCompatActivity implements AdapterView.OnItemC
         listView = (ListView) findViewById(R.id.lv_items);
         homeButton=findViewById(R.id.homebutton);
         backButton=findViewById(R.id.backbutton);
+        inputSearch = (EditText) findViewById(R.id.inputSearch);
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,7 +80,30 @@ public class showSheet1 extends AppCompatActivity implements AdapterView.OnItemC
         });
         listView.setOnItemClickListener(this);
         getItems();
+        inputSearch.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void onTextChanged(CharSequence cs, int arg1, int arg2, int arg3) {
+                // When user changed the Text
+               showSheet1.this.simpleAdapter.getFilter().filter(cs);
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence arg0, int arg1, int arg2,
+                                          int arg3) {
+                // TODO Auto-generated method stub
+
+            }
+
+        });
     }
+
 
 
     private void getItems() {
@@ -168,7 +205,7 @@ public class showSheet1 extends AppCompatActivity implements AdapterView.OnItemC
         }
 
 
-        adapter = new SimpleAdapter(this,list,R.layout.list_row_item,
+       simpleAdapter = new SimpleAdapter(this,list,R.layout.list_row_item,
                 new String[]{"date","sold","rate","lotno","broker","mark"},new int[]{R.id.datetvdata,R.id.statustvdata,R.id.ratetvdata,R.id.lotnotvdata,R.id.brokertvdata,R.id.marktvdata})
         {
             public View getView(int position, View convertView, ViewGroup parent) {
@@ -187,9 +224,10 @@ public class showSheet1 extends AppCompatActivity implements AdapterView.OnItemC
 
 
 
-        listView.setAdapter(adapter);
+        listView.setAdapter(simpleAdapter);
         loading.dismiss();
     }
+
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent intent = new Intent(this, ItemDetails.class);
         HashMap<String,String> map =(HashMap)parent.getItemAtPosition(position);
@@ -244,4 +282,7 @@ public class showSheet1 extends AppCompatActivity implements AdapterView.OnItemC
     public void onPointerCaptureChanged(boolean hasCapture) {
 
     }
+
+
+
 }
