@@ -125,7 +125,7 @@ public class UpdateItem extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if(position==0)
-                    Broker="";
+                    Broker=broker;
                 else
                     Broker= (String) parent.getItemAtPosition(position);
             }
@@ -217,7 +217,6 @@ public class UpdateItem extends AppCompatActivity {
                 String brokername = jo.getString("brokername");
 
                 brokers.add(brokername);
-
 
 
             }

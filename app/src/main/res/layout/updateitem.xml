@@ -512,7 +512,7 @@
             android:fontFamily="sans-serif"
             android:layout_below="@+id/remarkdtv"
             android:layout_toRightOf="@id/updatebutton"
-            android:text="SAVE WITH CHANGES"
+            android:text="SAVE AND MSG"
             android:id="@+id/updatewithchangesbutton" />
         <TextView
             android:layout_width="match_parent"

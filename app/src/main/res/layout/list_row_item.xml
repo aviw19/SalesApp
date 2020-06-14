@@ -9,7 +9,7 @@
         android:textColor="@color/Black"
         android:fontFamily="sans-serif"
         android:paddingLeft="40dp"
-        android:paddingTop="20dp"
+        android:paddingTop="12dp"
         android:id="@+id/lotnotv"/>
     <TextView
         android:layout_width="wrap_content"
@@ -17,7 +17,7 @@
         android:text="##"
         android:textColor="@color/Black"
         android:fontFamily="sans-serif"
-        android:paddingTop="20dp"
+        android:paddingTop="12dp"
         android:paddingLeft="5dp"
         android:layout_toRightOf="@id/lotnotv"
         android:id="@+id/lotnotvdata"/>
@@ -28,14 +28,14 @@
         android:textColor="@color/Black"
         android:fontFamily="sans-serif"
         android:paddingLeft="40dp"
-        android:paddingTop="15dp"
+        android:paddingTop="8dp"
         android:layout_below="@id/lotnotv"
         android:id="@+id/marktv"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sample"
-        android:paddingTop="15dp"
+        android:paddingTop="8dp"
         android:textColor="@color/Black"
         android:fontFamily="sans-serif"
         android:paddingLeft="5dp"
@@ -49,14 +49,14 @@
         android:paddingLeft="40dp"
         android:textColor="@color/Black"
         android:fontFamily="sans-serif"
-        android:paddingTop="15dp"
+        android:paddingTop="8dp"
         android:layout_below="@id/marktv"
         android:id="@+id/brokertv"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sample"
-        android:paddingTop="15dp"
+        android:paddingTop="8dp"
         android:paddingLeft="5dp"
         android:textColor="@color/Black"
         android:fontFamily="sans-serif"
@@ -67,7 +67,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=" # # #"
-        android:paddingTop="20dp"
+        android:paddingTop="12dp"
         android:paddingRight="40dp"
         android:textColor="@color/Black"
         android:fontFamily="sans-serif"
@@ -80,7 +80,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toLeftOf="@id/ratetvdata"
-        android:paddingTop="20dp"
+        android:paddingTop="12dp"
         android:textColor="@color/Black"
         android:fontFamily="sans-serif"
         android:text="Rate : " />
@@ -88,7 +88,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=" # # #"
-        android:paddingTop="15dp"
+        android:paddingTop="8dp"
         android:paddingRight="40dp"
         android:textColor="@color/Black"
         android:fontFamily="sans-serif"
@@ -105,14 +105,14 @@
         android:layout_below="@id/ratetv"
         android:textColor="@color/Black"
         android:fontFamily="sans-serif"
-        android:paddingTop="15dp"
+        android:paddingTop="8dp"
         android:text="Date : " />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sold"
-        android:paddingTop="15dp"
+        android:paddingTop="8dp"
         android:paddingRight="40dp"
         android:textColor="@color/Black"
         android:fontFamily="sans-serif"
@@ -129,9 +129,95 @@
         android:layout_below="@id/datetv"
         android:textColor="@color/Black"
         android:fontFamily="sans-serif"
-        android:paddingTop="15dp"
-        android:text="Status : " />
+        android:paddingTop="8dp"
+        android:text="SOLD : " />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="###"
+        android:paddingTop="8dp"
+        android:paddingRight="40dp"
+        android:textColor="@color/Black"
+        android:fontFamily="sans-serif"
+        android:layout_below="@id/statustvdata"
 
+        android:layout_alignParentRight="true"
+        android:id="@+id/netwttvdata"/>
 
+    <TextView
+        android:id="@+id/netwttv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/netwttvdata"
+        android:layout_below="@id/statustv"
+        android:textColor="@color/Black"
+        android:fontFamily="sans-serif"
+        android:paddingTop="8dp"
+        android:text="Net Wt: " />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Wt:"
+        android:paddingLeft="40dp"
+        android:textColor="@color/Black"
+        android:fontFamily="sans-serif"
+        android:paddingTop="8dp"
+        android:layout_below="@id/brokertv"
+        android:id="@+id/totalwttv"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="# # #"
+        android:paddingTop="8dp"
+        android:paddingLeft="5dp"
+        android:textColor="@color/Black"
+        android:fontFamily="sans-serif"
+        android:layout_below="@id/brokertv"
+        android:layout_toRightOf="@id/totalwttv"
+        android:id="@+id/totalwttvdata"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Grade: "
+        android:paddingLeft="40dp"
+        android:textColor="@color/Black"
+        android:fontFamily="sans-serif"
+        android:paddingTop="8dp"
+        android:layout_below="@id/totalwttv"
+        android:id="@+id/gradetv"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="# # #"
+        android:paddingTop="8dp"
+        android:paddingLeft="5dp"
+        android:textColor="@color/Black"
+        android:fontFamily="sans-serif"
+        android:layout_below="@id/totalwttv"
+        android:layout_toRightOf="@id/gradetv"
+        android:id="@+id/gradetvdata"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="# # #"
+        android:paddingTop="8dp"
+        android:paddingRight="40dp"
+        android:textColor="@color/Black"
+        android:fontFamily="sans-serif"
+        android:layout_below="@id/netwttv"
+
+        android:layout_alignParentRight="true"
+        android:id="@+id/pkgdtvdata"/>
+
+    <TextView
+        android:id="@+id/pkgdtv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/pkgdtvdata"
+        android:layout_below="@id/netwttv"
+        android:textColor="@color/Black"
+        android:fontFamily="sans-serif"
+        android:paddingTop="8dp"
+        android:text="Pkg : " />
 
 </RelativeLayout>

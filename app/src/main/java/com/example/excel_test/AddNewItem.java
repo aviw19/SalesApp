@@ -73,6 +73,7 @@ public class AddNewItem extends AppCompatActivity {
         setContentView(R.layout.activity_add_new_item);
         editTextDate = findViewById(R.id.dateet);
         editTextLotno = findViewById(R.id.lotnoet);
+        backButton=findViewById(R.id.back);
         editTextGrade = findViewById(R.id.gradeet);
         editTextNet = findViewById(R.id.netet);
         editTextPKG = findViewById(R.id.pkget);
@@ -92,7 +93,6 @@ public class AddNewItem extends AppCompatActivity {
         editTextRemark = findViewById(R.id.remarket);
         addItemButton = findViewById(R.id.additembutton);
         homeButton=findViewById(R.id.homebutton);
-        backButton=findViewById(R.id.backbutton);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -142,7 +142,13 @@ public class AddNewItem extends AppCompatActivity {
         final String PKG = editTextPKG.getText().toString().trim();
         final String Total = editTextTotal.getText().toString().trim();
         final String Mark = editTextMark.getText().toString().trim();
-        final String Sold = editTextSold.getText().toString().trim();
+        final String Sold;
+                String sold1= editTextSold.getText().toString().trim();
+        if(sold1.equalsIgnoreCase(""))
+            Sold="NO";
+        else
+            Sold=sold1;
+
         final String Rate = editTextRate.getText().toString().trim();
         final String CD = editTextCD.getText().toString().trim();
 

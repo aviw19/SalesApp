@@ -127,6 +127,14 @@
             android:textColor="@color/White"
             android:fontFamily="sans-serif"
             android:text="UNSOLD" />
+        <Button android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/viewbroker"
+            android:background="@color/colorPrimaryDark"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/White"
+            android:fontFamily="sans-serif"
+            android:text="BROKER &amp; No Party" />
 </LinearLayout>
     <View
         android:id="@+id/SplitLine_hor3"

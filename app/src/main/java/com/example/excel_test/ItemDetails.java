@@ -106,7 +106,7 @@ public class ItemDetails extends AppCompatActivity {
         textViewlotno.setText(lotno);
         textViewcd.setText(cd);
         textViewrate.setText(rate);
-        if(sold.trim().equals("YES"))
+        if(sold.trim().toUpperCase().equals("YES"))
             textViewsold.setTextColor(Color.GREEN);
         else
             textViewsold.setTextColor(Color.RED);

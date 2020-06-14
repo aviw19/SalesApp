@@ -9,19 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".showSheetUnsold"></activity>
+        <activity android:name=".Broker"></activity>
+        <activity android:name=".showSheetUnsold" />
         <activity android:name=".showSheetSold" />
         <activity android:name=".UpdateItem" />
         <activity android:name=".AddEmployee" />
         <activity android:name=".AddBroker" />
         <activity android:name=".ItemDetails" />
-        <activity android:name=".AddNewItem"
-        android:windowSoftInputMode="stateHidden|adjustPan"/>
+        <activity
+            android:name=".AddNewItem"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
         <activity android:name=".showSheet1">
-        <meta-data
-            android:name="android.app.searchable"
-            android:resource="@xml/searchable">
-        </meta-data>
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable"></meta-data>
         </activity>
         <activity android:name=".Options" />
         <activity android:name=".MainActivity">

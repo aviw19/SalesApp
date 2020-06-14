@@ -3,31 +3,20 @@ package com.example.excel_test;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
-import android.app.SearchManager;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Filter;
-import android.widget.Filterable;
 import android.widget.ImageButton;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.SearchView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
@@ -44,16 +33,15 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Locale;
-import java.util.Map;
 
-public class showSheet1 extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class Broker extends AppCompatActivity implements AdapterView.OnItemClickListener {
+
     ListView listView;
     ListAdapter adapter;
     ProgressDialog loading;
     ImageButton homeButton;
-    SimpleAdapter simpleAdapter;
     ImageButton backButton;
+    SimpleAdapter simpleAdapter;
     EditText inputSearch;
 
     @Override
@@ -63,18 +51,18 @@ public class showSheet1 extends AppCompatActivity implements AdapterView.OnItemC
         listView = (ListView) findViewById(R.id.lv_items);
         homeButton=findViewById(R.id.homebutton);
         backButton=findViewById(R.id.backbutton);
-        inputSearch = (EditText) findViewById(R.id.inputSearch);
+        inputSearch=findViewById(R.id.inputSearch);
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(showSheet1.this,Options.class);
+                Intent intent= new Intent(Broker.this,Options.class);
                 startActivity(intent);
             }
         });
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(showSheet1.this,Options.class);
+                Intent intent= new Intent(Broker.this,Options.class);
                 startActivity(intent);
             }
         });
@@ -85,7 +73,7 @@ public class showSheet1 extends AppCompatActivity implements AdapterView.OnItemC
             @Override
             public void onTextChanged(CharSequence cs, int arg1, int arg2, int arg3) {
                 // When user changed the Text
-               showSheet1.this.simpleAdapter.getFilter().filter(cs);
+                Broker.this.simpleAdapter.getFilter().filter(cs);
 
             }
 
@@ -103,7 +91,6 @@ public class showSheet1 extends AppCompatActivity implements AdapterView.OnItemC
 
         });
     }
-
 
 
     private void getItems() {
@@ -157,12 +144,12 @@ public class showSheet1 extends AppCompatActivity implements AdapterView.OnItemC
                 String mark = jo.getString("mark");
                 String rate = jo.getString("rate");
                 String sold = jo.getString("sold");
-                String broker = jo.getString("broker");
+                String broker = jo.getString("broker").trim();
                 String pkg = jo.getString("pkg");
                 String net = jo.getString("net");
                 String grade = jo.getString("grade");
                 String cd = jo.getString("cd");
-                String partyname = jo.getString("partyname");
+                String partyname = jo.getString("partyname").trim();
                 String city = jo.getString("city");
                 String transport = jo.getString("transport");
                 String dio = jo.getString("dio");
@@ -195,8 +182,8 @@ public class showSheet1 extends AppCompatActivity implements AdapterView.OnItemC
                 item.put("grade",grade);
                 item.put("pkg",pkg);
                 item.put("net",net);
-
-                list.add(item);
+                if((!(broker.equals("")))&&(partyname.equals("")))
+                    list.add(item);
 
 
             }
@@ -205,9 +192,9 @@ public class showSheet1 extends AppCompatActivity implements AdapterView.OnItemC
         }
 
 
-       simpleAdapter = new SimpleAdapter(this,list,R.layout.list_row_item,
-               new String[]{"date","sold","rate","lotno","broker","mark","total","net","grade","pkg"},
-               new int[]{R.id.datetvdata,R.id.statustvdata,R.id.ratetvdata,R.id.lotnotvdata,R.id.brokertvdata,R.id.marktvdata,R.id.totalwttvdata,R.id.netwttvdata,R.id.gradetvdata,R.id.pkgdtvdata})
+        simpleAdapter = new SimpleAdapter(this,list,R.layout.list_row_item,
+                new String[]{"date","sold","rate","lotno","broker","mark","total","net","grade","pkg"},
+                new int[]{R.id.datetvdata,R.id.statustvdata,R.id.ratetvdata,R.id.lotnotvdata,R.id.brokertvdata,R.id.marktvdata,R.id.totalwttvdata,R.id.netwttvdata,R.id.gradetvdata,R.id.pkgdtvdata})
         {
             public View getView(int position, View convertView, ViewGroup parent) {
                 View view = super.getView(position, convertView, parent);
@@ -228,7 +215,6 @@ public class showSheet1 extends AppCompatActivity implements AdapterView.OnItemC
         listView.setAdapter(simpleAdapter);
         loading.dismiss();
     }
-
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent intent = new Intent(this, ItemDetails.class);
         HashMap<String,String> map =(HashMap)parent.getItemAtPosition(position);
@@ -283,7 +269,4 @@ public class showSheet1 extends AppCompatActivity implements AdapterView.OnItemC
     public void onPointerCaptureChanged(boolean hasCapture) {
 
     }
-
-
-
 }

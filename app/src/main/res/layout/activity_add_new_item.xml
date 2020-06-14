@@ -20,20 +20,21 @@
      android:background="@color/Green"/>
 
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/Green"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:src="@drawable/ic_arrow_back_black_24dp"
-        android:id="@+id/backbutton"/>
+
 
  <ScrollView android:layout_width="fill_parent"
  android:layout_height="wrap_content">
   <RelativeLayout
       android:layout_width="match_parent"
       android:layout_height="match_parent">
+      <ImageButton
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:backgroundTint="@color/Green"
+          android:layout_alignParentTop="true"
+          android:layout_alignParentLeft="true"
+          android:src="@drawable/ic_arrow_back_black_24dp"
+          android:id="@+id/back"/>
 
 
     <EditText

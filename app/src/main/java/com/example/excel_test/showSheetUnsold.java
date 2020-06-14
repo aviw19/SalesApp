@@ -6,9 +6,12 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -37,6 +40,8 @@ public class showSheetUnsold extends AppCompatActivity implements AdapterView.On
     ProgressDialog loading;
     ImageButton homeButton;
     ImageButton backButton;
+    SimpleAdapter simpleAdapter;
+    EditText inputSearch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +50,7 @@ public class showSheetUnsold extends AppCompatActivity implements AdapterView.On
         listView = (ListView) findViewById(R.id.lv_items);
         homeButton=findViewById(R.id.homebutton);
         backButton=findViewById(R.id.backbutton);
+        inputSearch=findViewById(R.id.inputSearch);
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,6 +67,28 @@ public class showSheetUnsold extends AppCompatActivity implements AdapterView.On
         });
         listView.setOnItemClickListener(this);
         getItems();
+        inputSearch.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void onTextChanged(CharSequence cs, int arg1, int arg2, int arg3) {
+                // When user changed the Text
+                showSheetUnsold.this.simpleAdapter.getFilter().filter(cs);
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence arg0, int arg1, int arg2,
+                                          int arg3) {
+                // TODO Auto-generated method stub
+
+            }
+
+        });
     }
 
 
@@ -163,13 +191,14 @@ public class showSheetUnsold extends AppCompatActivity implements AdapterView.On
         }
 
 
-        adapter = new SimpleAdapter(this,list,R.layout.list_row_item,
-                new String[]{"date","sold","rate","lotno","broker","mark"},new int[]{R.id.datetvdata,R.id.statustvdata,R.id.ratetvdata,R.id.lotnotvdata,R.id.brokertvdata,R.id.marktvdata})
+         simpleAdapter= new SimpleAdapter(this,list,R.layout.list_row_item,
+                new String[]{"date","sold","rate","lotno","broker","mark","total","net","grade","pkg"},
+                new int[]{R.id.datetvdata,R.id.statustvdata,R.id.ratetvdata,R.id.lotnotvdata,R.id.brokertvdata,R.id.marktvdata,R.id.totalwttvdata,R.id.netwttvdata,R.id.gradetvdata,R.id.pkgdtvdata})
         {
             public View getView(int position, View convertView, ViewGroup parent) {
                 View view = super.getView(position, convertView, parent);
                 TextView text1 = (TextView) view.findViewById(R.id.statustvdata);
-                if(text1.getText().equals("YES")) {
+                if((text1.getText().toString().equalsIgnoreCase("YES"))||(text1.getText().toString().equalsIgnoreCase("SOLD"))) {
                     text1.setTextColor(Color.GREEN);
                 }
                 else
@@ -182,7 +211,7 @@ public class showSheetUnsold extends AppCompatActivity implements AdapterView.On
 
 
 
-        listView.setAdapter(adapter);
+        listView.setAdapter(simpleAdapter);
         loading.dismiss();
     }
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

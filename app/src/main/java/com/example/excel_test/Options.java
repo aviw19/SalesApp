@@ -26,8 +26,10 @@ public class Options extends AppCompatActivity {
     SharedPreferences sharedPreferences;
     Button buttonSold;
     Button buttonUnSold;
+    Button buttonBroker;
     String username;
     String password;
+
 
 
     @Override
@@ -47,6 +49,7 @@ public class Options extends AppCompatActivity {
         buttonAddNewEmployee=findViewById(R.id.newemployee);
         buttonViewEmployee=findViewById(R.id.employeesheet);
         buttonViewBroker=findViewById(R.id.brokersheet);
+        buttonBroker=findViewById(R.id.viewbroker);
         buttonSold=findViewById(R.id.viewsold);
         if(!((username.equals("admin"))&&(password.equals("admin"))))
         {
@@ -136,6 +139,13 @@ public class Options extends AppCompatActivity {
                 Intent intent = new Intent(Options.this,MainActivity.class);
                 startActivity(intent);
 
+            }
+        });
+        buttonBroker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Options.this,Broker.class);
+                startActivity(intent);
             }
         });
     }

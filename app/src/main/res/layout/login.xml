@@ -67,7 +67,7 @@
         android:text="Powered by Intery Tech"
         android:textAlignment="center"
         android:textSize="30dp"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/BlueIntery"
         android:textColor="@color/White"
        android:fontFamily="sans-serif"/>
 </RelativeLayout>
